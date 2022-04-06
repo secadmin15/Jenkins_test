@@ -1,4 +1,18 @@
 pipeline {
+    agent { docker { image 'python:3.10.1-alpine' } }
+    stages {
+        stage('test1') {
+            steps {
+                sh 'python --version'
+            }
+        }
+    }
+}
+
+
+
+
+/*pipeline {
     agent { docker { image 'ruby:3.0.3-alpine' } }
     stages {
         stage('build') {
@@ -7,7 +21,9 @@ pipeline {
             }
         }
     }
-}
+}*/
+
+
 
 
 /*pipeline {
