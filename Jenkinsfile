@@ -1,4 +1,16 @@
 pipeline {
+    agent { docker { image 'golang:1.17.5-alpine' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'go version'
+            }
+        }
+    }
+}
+
+
+/*pipeline {
     agent { docker { image 'php:8.1.0-alpine' } }
     stages {
         stage('build') {
@@ -7,7 +19,7 @@ pipeline {
             }
         }
     }
-}
+}*/
 
 
 
