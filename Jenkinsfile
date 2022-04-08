@@ -1,4 +1,16 @@
-pipeline {
+node('docker') {
+    stage('Build') {
+        docker.image('maven:3.8.4-openjdk-11-slim').inside {
+            sh 'mvn --version'
+        }
+    }
+}
+
+
+
+
+
+/*pipeline {
     agent { docker { image 'golang:1.17.5-alpine' } }
     stages {
         stage('build') {
@@ -7,7 +19,7 @@ pipeline {
             }
         }
     }
-}
+}*/
 
 
 /*pipeline {
